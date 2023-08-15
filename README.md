@@ -5,7 +5,7 @@ The Odin Project Exercise
 
  - View given [assignment](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form#assignment)
 
- - View [the project]()
+ - View [the project](https://volodimeru.github.io/sign-up-form/)
 
 ## About
 
