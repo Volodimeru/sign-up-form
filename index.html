@@ -13,7 +13,7 @@
             <div class="logotext">ODIN</div>
         </div>
         <div class="photocredit">
-            Photo by <a href="https://unsplash.com/@haliewestphoto">Taneli Lahtinen</a> on <a href="https://unsplash.com/">Unsplash</a>
+            Photo by <a href="https://unsplash.com/@sotti">Shifaaz shamoon</a> on <a href="https://unsplash.com/">Unsplash</a>
         </div>
     </div>
     <div class="right">
@@ -31,15 +31,15 @@
 
                 </header>
                 <div class="inputscontainer">
-                    <h1>Let's do this!</h1>
+                    <p>Let's do this!</p>
                     <div class="form-row">
                         <div class="row-input">
                             <label for="firstName">FIRST NAME</label>
-                            <input type="text" id="firstName" name="firstName">
+                            <input type="text" id="firstName" name="firstName" minlength="2" maxlength="20">
                         </div>
                         <div class="row-input">
                             <label for="lastName">LAST NAME</label>
-                            <input type="text" id="lastName" name="lastName">
+                            <input type="text" id="lastName" name="lastName" minlength="2" maxlength="20">
                         </div>
                     </div>
                     <div class="form-row">
@@ -49,22 +49,24 @@
                         </div>
                         <div class="row-input">
                             <label for="phone">PHONE NUMBER</label>
-                            <input type="tel" id="phone" name="phone"> 
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}"> 
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="row-input">
                             <label for="pwd">PASSWORD</label>
-                            <input type="password" id="pwd" name="pwd">
+                            <input type="password" id="pwd" name="pwd" onkeyup="powdcompare()" minlength="4" maxlength="20">
+                            <span id="one"></span>
                         </div>
                         <div class="row-input">
                             <label for="pwd">CONFIRM PASSWORD</label>
-                            <input type="password" id="cpwd" name="cpwd">
+                            <input type="password" id="cpwd" name="cpwd" onkeyup="powdcompare()" minlength="4" maxlength="20">
+                            <span id="two"></span>
                         </div>
                     </div>
                 </div>
                 <div class="buttoncontainer">
-                    <button>Create Account</button>
+                    <input type="submit" id='but' value="Create Account">
                     <p>Already have an account? <a href="">Log in</a></p>
                 </div>
             </form>
@@ -72,5 +74,19 @@
 
         </div>
     </div>
+    <script>
+        function powdcompare(){
+            if ((document.getElementById('pwd').value)==
+            document.getElementById('cpwd').value) {
+                document.getElementById('pwd').style.borderColor = "green"
+                document.getElementById('cpwd').style.borderColor = "green"
+                document.getElementById('two').innerHTML = ""
+            } else {
+                document.getElementById('pwd').style.borderColor = "red"
+                document.getElementById('cpwd').style.borderColor = "red"
+                document.getElementById('two').innerHTML = "Passwords do NOT match"
+            }
+        }
+    </script>
 </body>
 </html>
